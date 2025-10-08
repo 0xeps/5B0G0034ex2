@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfDrinkOrder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="飲料點餐系統" Height="600" Width="600">
+    <Grid Margin="10">
+        <StackPanel>
+            <GroupBox Header="請選擇內用或外帶" Margin="5">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton Name="rbDineIn" Content="內用" Margin="10"/>
+                    <RadioButton Name="rbTakeOut" Content="外帶" Margin="10"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="請選擇飲料" Margin="5">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <CheckBox Name="cbMilkTea" Content="珍珠奶茶 ($50)" Margin="10"/>
+                        <Slider Name="sliderMilkTea" Minimum="0" Maximum="10" Width="100" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                        <Label Name="labelMilkTeaQty" Content="0杯" Width="50"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <CheckBox Name="cbGreenTea" Content="綠茶 ($40)" Margin="10"/>
+                        <Slider Name="sliderGreenTea" Minimum="0" Maximum="10" Width="100" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                        <Label Name="labelGreenTeaQty" Content="0杯" Width="50"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <CheckBox Name="cbLemonJuice" Content="檸檬汁 ($60)" Margin="10"/>
+                        <Slider Name="sliderLemonJuice" Minimum="0" Maximum="10" Width="100" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                        <Label Name="labelLemonJuiceQty" Content="0杯" Width="50"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <Button Name="btnCalculate" Content="計算金額" Margin="5" Height="30" Click="btnCalculate_Click"/>
+            <TextBlock Name="txtResult" Text="點餐結果將顯示於此" Margin="10" TextWrapping="Wrap" FontSize="14"/>
+        </StackPanel>
+    </Grid>
+</Window>
